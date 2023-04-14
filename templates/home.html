@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+<body>
+    hello<br>
+    {{tasks}}
+    <br>
+    {% for task in tasks %}
+        id : {{task.id}}<br>
+        name : {{task.name}}<br>
+        description : {{task.description}}
+        <hr>
+    {% endfor %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <h4>
+          {{ form.as_p }}
+        </h4>
+        <button>Submit</button>
+    </form>
+
+</body>
+</html>
